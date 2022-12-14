@@ -10,6 +10,7 @@ class TransactionController extends Controller
         $transaction = Transaction::create([
             'name' => $request->name,
             'money' => $request->money,
+            'idUsuario2' => $request->idUsuario2,
         ]);
     }
 }
