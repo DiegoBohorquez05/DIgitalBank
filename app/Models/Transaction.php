@@ -11,7 +11,6 @@ class transaction extends Model
 
 
     protected $fillable = [
-        'id',
         'name',
         'maney',
         'idUsuario2',
