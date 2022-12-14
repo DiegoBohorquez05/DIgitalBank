@@ -8,7 +8,8 @@ class TransactionController extends Controller
 {
     public function update(Request $request){
         $transaction = Transaction::create([
-            
+            'name' => $request->name,
+            'money' => $request->money,
         ]);
     }
 }
