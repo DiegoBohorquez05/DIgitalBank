@@ -12,8 +12,7 @@ class transaction extends Model
 
     protected $fillable = [
         'name',
-        'maney',
-        'idUsuario2',
+        'money',
     ];
 
     public function usuario()

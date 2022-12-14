@@ -17,7 +17,8 @@ class TransactionFactory extends Factory
     public function definition()
     {
         return [
-            
+            'name'=> fake()-> name(),
+            'money' => fake()->randomNumber(10),
         ];
     }
 }
