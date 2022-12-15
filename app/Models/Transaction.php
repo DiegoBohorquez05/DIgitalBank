@@ -13,6 +13,7 @@ class transaction extends Model
     protected $fillable = [
         'name',
         'money',
+        'user_id_receives',
     ];
 
     public function usuario()

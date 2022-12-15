@@ -15,4 +15,36 @@ class UserController extends Controller
             'password' => $request->password,
         ]);
     }
+
+    public function show($id,$valorResta){
+        $balanceUser = user::find($id)->money;
+
+        if($valorResta > $balanceUser){
+            return 'No se puede hacer la transferencia';
+        }else{
+            $resultadoResta = $balanceUser-$valorResta;
+            
+            user::where('id', $id)
+            ->update([
+                'money' => $resultadoResta,
+            ]);
+            return $resultadoResta;
+        }
+    }
+
+    public function index(Request $request){
+
+        $usuarioEnviar=user::find([
+            'id'=>$request->id,
+        ]);
+
+        //Guardar el valor que se va a enviar
+
+        function x ($request , $usuarioEnvia){
+            $valor = $request->valor;
+        }
+        
+        return $usuarioEnvia;
+        
+    } 
 }

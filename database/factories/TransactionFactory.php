@@ -19,6 +19,7 @@ class TransactionFactory extends Factory
         return [
             'name'=> fake()-> name(),
             'money' => fake()->randomNumber(10),
+            'user_id_receives' => fake(),
         ];
     }
 }

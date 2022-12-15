@@ -23,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::put('/{id}',[TransactionController::class, 'update']);
 
 Route::post('create',[UserController::class, 'create']);
+
+Route::get('listar-plata/{id}/{valorResta}',[UserController::class, 'show']);
+
+Route::post('enviar/{id}',[UserController::class, 'index']);

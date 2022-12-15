@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('money');
+
+            $table->unsignedBigInteger('user_id_receives');
+            $table->foreign('user_id_receives')
+                    ->references('id')->on('users');
+            // $table->foreignId('user_id')->constrained('user');
         });
     }
 
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('transaction');
     }
 };
