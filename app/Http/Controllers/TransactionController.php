@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\transaction;
 
 class TransactionController extends Controller
 {
-    public function update(Request $request){
+    public function create(Request $request){
         $transaction = Transaction::create([
-            //Nombre del usuario al que se le va a transferir
-            'name' => $request->name,
-            //Cantidad de plata que se va a transferir
-            'money' => $request->money,
-            //ID del usuario al que se le va a transferir
-            'user_id_receives' => $request->id_Usuario2,
+            'user_id_send' => user::find($request->id)->id,
+            'money' => user::find($request->valorResta),
+            'user_id_receives' => user::find($request->idReceives)->id,
         ]);
     }
 }

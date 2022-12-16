@@ -17,7 +17,7 @@ class TransactionFactory extends Factory
     public function definition()
     {
         return [
-            'name'=> fake()-> name(),
+            'user_id_send'=> fake()-> name(),
             'money' => fake()->randomNumber(10),
             'user_id_receives' => fake(),
         ];

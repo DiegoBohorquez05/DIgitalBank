@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('transaction', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->integer('user_id_send');  
             $table->integer('money');
-
-            $table->unsignedBigInteger('user_id_receives');
-            $table->foreign('user_id_receives')
-                    ->references('id')->on('users');
+            $table->integer('user_id_receives');
             // $table->foreignId('user_id')->constrained('user');
+
+            $table->timestamps();
         });
     }
 
